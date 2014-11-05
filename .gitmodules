@@ -31,3 +31,24 @@
 [submodule "modules/sudo"]
 	path = modules/sudo
 	url = https://github.com/puppetlabs/puppetlabs-sudo.git
+[submodule "modules/php"]
+	path = modules/php
+	url = https://github.com/jippi/puppet-php.git
+[submodule "modules/apache"]
+	path = modules/apache
+	url = https://github.com/puppetlabs/puppetlabs-apache.git
+[submodule "modules/mysql"]
+	path = modules/mysql
+	url = https://github.com/example42/puppet-mysql.git
+[submodule "modules/cron"]
+	path = modules/cron
+	url = https://github.com/torrancew/puppet-cron.git
+[submodule "modules/pear"]
+	path = modules/pear
+	url = https://github.com/rafaelfelix/puppet-pear.git
+[submodule "modules/logrotate"]
+	path = modules/logrotate
+	url = https://github.com/rodjek/puppet-logrotate.git
+[submodule "modules/varnish"]
+	path = modules/varnish
+	url = https://github.com/maxchk/puppet-varnish.git

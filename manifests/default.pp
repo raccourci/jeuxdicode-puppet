@@ -23,3 +23,8 @@ class { 'jeuxdicode::baseconfig::sources': stage => 'setup_sources' }
 
 # Hiera common
 hiera_include('common_classes')
+
+# Hiera by role
+each(split($::roles, ',')) |$role| {
+    hiera_include("${role}_classes", '')
+}
