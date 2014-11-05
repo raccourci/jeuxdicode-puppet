@@ -1,1 +1,6 @@
 ---
+common_classes:
+    - jeuxdicode::users::root
+    - jeuxdicode::users::admin
+    - jeuxdicode::packages::standalone
+    - jeuxdicode::packages::mod_sshd

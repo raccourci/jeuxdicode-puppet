@@ -20,3 +20,6 @@ Stage['setup_env'] -> Stage['setup_sources'] -> Stage['main']
 # Baseconfig
 class { 'jeuxdicode::baseconfig::env': stage => 'setup_env' }
 class { 'jeuxdicode::baseconfig::sources': stage => 'setup_sources' }
+
+# Hiera common
+hiera_include('common_classes')

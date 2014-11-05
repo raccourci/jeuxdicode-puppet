@@ -1,0 +1,25 @@
+# PATH
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+export LC_ALL=fr_FR.UTF-8
+export LANGUAGE=fr_FR.UTF-8
+export LANG=fr_FR.UTF-8
+
+if [ "$BASH" ]; then
+    if [ -f ~/.bashrc ]; then
+        source ~/.bashrc
+    fi
+fi
+
+if [ -f ~/.rbenvrc ]; then
+    source ~/.rbenvrc
+fi
+
+# Load all custom profiles (ex: profile_sf2)
+for file in ~/.profile_* ; do
+    if [ -f "$file" ] ; then
+        source "$file"
+    fi
+done
+
+mesg n

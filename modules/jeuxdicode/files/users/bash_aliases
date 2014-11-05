@@ -1,0 +1,12 @@
+# Some more alias to avoid making mistakes:
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias c='clear'
+alias df='df -h'
+alias '..'='cd ..'
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias varnishtop="watch -n 1 varnishadm backend.list"
