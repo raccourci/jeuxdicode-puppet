@@ -16,3 +16,7 @@ stage { 'setup_env': }
 stage { 'setup_sources': }
 
 Stage['setup_env'] -> Stage['setup_sources'] -> Stage['main']
+
+# Baseconfig
+class { 'jeuxdicode::baseconfig::env': stage => 'setup_env' }
+class { 'jeuxdicode::baseconfig::sources': stage => 'setup_sources' }
