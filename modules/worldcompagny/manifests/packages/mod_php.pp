@@ -1,4 +1,4 @@
-class jeuxdicode::packages::mod_php {
+class worldcompagny::packages::mod_php {
 
     # Installation PHP
     include php
@@ -46,7 +46,7 @@ class jeuxdicode::packages::mod_php {
             owner => 'root',
             group => 'www-data',
             mode  => '0755',
-            source  => 'puppet:///modules/jeuxdicode/packages/php/apc',
+            source  => 'puppet:///modules/worldcompagny/packages/php/apc',
             recurse => true,
             require => File['/var/www'];
 

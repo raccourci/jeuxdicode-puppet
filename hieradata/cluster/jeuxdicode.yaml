@@ -1,22 +1,22 @@
 ---
 web_sources:
-    - jeuxdicode::baseconfig::sources::dotdeb_php54
+    - worldcompagny::baseconfig::sources::dotdeb_php54
 
 web_classes:
-    - jeuxdicode::packages::mod_apache
-    - jeuxdicode::packages::mod_php
-    - jeuxdicode::clusters::jeuxdicode::web
+    - worldcompagny::packages::mod_apache
+    - worldcompagny::packages::mod_php
+    - worldcompagny::clusters::jeuxdicode::web
 
 db_classes:
-    - jeuxdicode::packages::mod_mysql
-    - jeuxdicode::clusters::jeuxdicode::db
+    - worldcompagny::packages::mod_mysql
+    - worldcompagny::clusters::jeuxdicode::db
 
 app_classes:
-    - jeuxdicode::clusters::jeuxdicode::app
+    - worldcompagny::clusters::jeuxdicode::app
 
 cache_sources:
-    - jeuxdicode::baseconfig::sources::varnish4
+    - worldcompagny::baseconfig::sources::varnish4
 
 cache_classes:
-    - jeuxdicode::packages::mod_varnish
-    - jeuxdicode::clusters::jeuxdicode::cache
+    - worldcompagny::packages::mod_varnish
+    - worldcompagny::clusters::jeuxdicode::cache

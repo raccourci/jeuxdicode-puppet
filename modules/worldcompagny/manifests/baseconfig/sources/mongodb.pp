@@ -1,4 +1,4 @@
-class jeuxdicode::baseconfig::sources::mongodb inherits jeuxdicode::baseconfig::sources {
+class worldcompagny::baseconfig::sources::mongodb inherits worldcompagny::baseconfig::sources {
 
     apt::source { 'downloads-distro.mongodb.org':
         location    => 'http://downloads-distro.mongodb.org/repo/debian-sysvinit',

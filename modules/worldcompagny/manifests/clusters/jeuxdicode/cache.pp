@@ -1,4 +1,4 @@
-class jeuxdicode::clusters::jeuxdicode::cache {
+class worldcompagny::clusters::jeuxdicode::cache {
 
     $varnish_port = "80"
     $varnish_jeuxdicode_vcl = '/etc/varnish/jeuxdicode.vcl'
@@ -109,7 +109,7 @@ class jeuxdicode::clusters::jeuxdicode::cache {
         $varnish_jeuxdicode_vcl:
             owner => 'root',
             group => 'root',
-            content => template('jeuxdicode/jeuxdicode/vcl.erb'),
+            content => template('worldcompagny/jeuxdicode/vcl.erb'),
             notify => Service['varnish']
     }
 }

@@ -1,4 +1,4 @@
-class jeuxdicode::baseconfig::env {
+class worldcompagny::baseconfig::env {
 
     # Installation des locales
     class { 'locales':
@@ -33,7 +33,7 @@ class jeuxdicode::baseconfig::env {
 
     # Mise en place motd
     class { 'motd':
-        template => 'jeuxdicode/motd.erb',
+        template => 'worldcompagny/motd.erb',
     }
 
 }

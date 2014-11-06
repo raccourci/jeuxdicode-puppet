@@ -1,4 +1,4 @@
-class jeuxdicode::users::admin {
+class worldcompagny::users::admin {
 
     # Création du user 'admin' et de son homedir
     user {
@@ -58,21 +58,21 @@ class jeuxdicode::users::admin {
             owner => 'admin',
             group => 'www-data',
             mode  => '0600',
-            source => 'puppet:///modules/jeuxdicode/users/bashrc_admin',
+            source => 'puppet:///modules/worldcompagny/users/bashrc_admin',
             require => File['/home/admin'];
 
         '/home/admin/.bash_aliases':
             owner => 'admin',
             group => 'www-data',
             mode  => '0600',
-            source => 'puppet:///modules/jeuxdicode/users/bash_aliases',
+            source => 'puppet:///modules/worldcompagny/users/bash_aliases',
             require => File['/home/admin'];
 
         '/home/admin/.profile':
             owner => 'admin',
             group => 'www-data',
             mode  => '0600',
-            source => 'puppet:///modules/jeuxdicode/users/profile',
+            source => 'puppet:///modules/worldcompagny/users/profile',
             require => File['/home/admin'];
 
         # Create logs directory
@@ -95,7 +95,7 @@ class jeuxdicode::users::admin {
             owner => 'admin',
             group => 'www-data',
             mode  => '0600',
-            source => "puppet:///modules/jeuxdicode/users/ssh/authorized_keys/${::env}",
+            source => "puppet:///modules/worldcompagny/users/ssh/authorized_keys/${::env}",
             require => File['/home/admin/.ssh'];
     }
 

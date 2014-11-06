@@ -1,4 +1,4 @@
-class jeuxdicode::packages::mod_sshd {
+class worldcompagny::packages::mod_sshd {
 
     # Config SSH
     augeas { 'sshd_config':

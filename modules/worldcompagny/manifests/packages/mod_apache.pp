@@ -1,8 +1,8 @@
-class jeuxdicode::packages::mod_apache {
+class worldcompagny::packages::mod_apache {
 
     # Installation Apache
     class { 'apache':
-        serveradmin      => 'admin@jeuxdicode.fr',
+        serveradmin      => 'admin@worldcompagny.fr',
         mpm_module       => 'worker',
         default_vhost    => false,
         default_mods     => true,
@@ -67,7 +67,7 @@ class jeuxdicode::packages::mod_apache {
         owner   => 'root',
         group   => 'root',
         path    => "${::apache::confd_dir}/php5-fpm.conf",
-        source  => 'puppet:///modules/jeuxdicode/packages/apache/php5-fpm.conf',
+        source  => 'puppet:///modules/worldcompagny/packages/apache/php5-fpm.conf',
         require => [
             Class['apache'],
             Apache::Mod['fastcgi']
@@ -90,7 +90,7 @@ class jeuxdicode::packages::mod_apache {
             owner => 'root',
             group => 'www-data',
             mode  => '0644',
-            source  => 'puppet:///modules/jeuxdicode/packages/apache/bg.jpg',
+            source  => 'puppet:///modules/worldcompagny/packages/apache/bg.jpg',
             require => File['/var/www/index.html'];
 
         '/var/www/probe':

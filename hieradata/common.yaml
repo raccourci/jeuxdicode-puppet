@@ -1,6 +1,6 @@
 ---
 common_classes:
-    - jeuxdicode::users::root
-    - jeuxdicode::users::admin
-    - jeuxdicode::packages::standalone
-    - jeuxdicode::packages::mod_sshd
+    - worldcompagny::users::root
+    - worldcompagny::users::admin
+    - worldcompagny::packages::standalone
+    - worldcompagny::packages::mod_sshd

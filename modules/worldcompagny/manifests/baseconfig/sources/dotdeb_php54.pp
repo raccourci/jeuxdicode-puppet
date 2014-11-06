@@ -1,4 +1,4 @@
-class jeuxdicode::baseconfig::sources::dotdeb_php54 inherits jeuxdicode::baseconfig::sources {
+class worldcompagny::baseconfig::sources::dotdeb_php54 inherits worldcompagny::baseconfig::sources {
 
     apt::source { 'dotdeb':
         location => "http://packages.dotdeb.org",

@@ -1,4 +1,4 @@
-class jeuxdicode::packages::mod_mysql {
+class worldcompagny::packages::mod_mysql {
 
     # Installation MySQL
     class { 'mysql':

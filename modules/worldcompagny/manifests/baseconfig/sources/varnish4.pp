@@ -1,4 +1,4 @@
-class jeuxdicode::baseconfig::sources::varnish4 inherits jeuxdicode::baseconfig::sources {
+class worldcompagny::baseconfig::sources::varnish4 inherits worldcompagny::baseconfig::sources {
 
     apt::source { 'varnish4':
         location => 'http://repo.varnish-cache.org/debian/',

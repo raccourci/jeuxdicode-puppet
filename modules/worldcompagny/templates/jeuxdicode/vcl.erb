@@ -3,10 +3,10 @@ vcl 4.0;
 import directors;
 
 # Default settings and probe
-<% settings = scope.lookupvar('jeuxdicode::clusters::jeuxdicode::cache::settings') -%>
+<% settings = scope.lookupvar('worldcompagny::clusters::jeuxdicode::cache::settings') -%>
 
 # Public backends
-<% scope.lookupvar('jeuxdicode::clusters::jeuxdicode::cache::backends_public').each do |backend| -%>
+<% scope.lookupvar('worldcompagny::clusters::jeuxdicode::cache::backends_public').each do |backend| -%>
 backend <%= backend['name'] %> {
     .host = "<%= backend['host'] %>";
     .port = "<%= backend['port'] %>";
@@ -25,7 +25,7 @@ backend <%= backend['name'] %> {
 
 # Admin backends
 <% backends_admin_exists = false -%>
-<% scope.lookupvar('jeuxdicode::clusters::jeuxdicode::cache::backends_admin').each do |backend| -%>
+<% scope.lookupvar('worldcompagny::clusters::jeuxdicode::cache::backends_admin').each do |backend| -%>
 <% backends_admin_exists = true -%>
 backend <%= backend['name'] %> {
     .host = "<%= backend['host'] %>";
@@ -46,19 +46,19 @@ backend <%= backend['name'] %> {
 # Below is an example redirector based on round-robin requests
 sub vcl_init {
     new cluster_public = directors.round_robin();
-<% scope.lookupvar('jeuxdicode::clusters::jeuxdicode::cache::backends_public').each do |backend| -%>
+<% scope.lookupvar('worldcompagny::clusters::jeuxdicode::cache::backends_public').each do |backend| -%>
     cluster_public.add_backend(<%= backend['name'] %>);
 <% end -%>
 <% if backends_admin_exists -%>
     new cluster_admin = directors.round_robin();
-<% scope.lookupvar('jeuxdicode::clusters::jeuxdicode::cache::backends_admin').each do |backend| -%>
+<% scope.lookupvar('worldcompagny::clusters::jeuxdicode::cache::backends_admin').each do |backend| -%>
     cluster_admin.add_backend(<%= backend['name'] %>);
 <% end -%>
 <% end -%>
 }
 
 acl purge {
-    <%= scope.lookupvar('jeuxdicode::clusters::jeuxdicode::cache::purge_acl') %>
+    <%= scope.lookupvar('worldcompagny::clusters::jeuxdicode::cache::purge_acl') %>
 }
 
 # Handle the HTTP request received by the client
@@ -103,7 +103,7 @@ sub vcl_recv {
 
         if (req.url != "/") {
             # Ban every cache object containing the given tag
-            ban("obj.http.x-domain == " + req.http.host + " && obj.http.x-jeuxdicode-cache-tags ~ " + regsuball(req.url, "^/", ""));
+            ban("obj.http.x-domain == " + req.http.host + " && obj.http.x-cache-tags ~ " + regsuball(req.url, "^/", ""));
         } else {
             # Ban the full domain
             ban("obj.http.x-domain == " + req.http.host);
@@ -200,11 +200,6 @@ sub vcl_recv {
             return (pass);
         }
 
-        # Remove all cookies for SSO My Account
-        if (req.url ~ "^/api/myaccount" && req.http.Cookie ~ "RC-API-SESSID") {
-            return (pass);
-        }
-
         unset req.http.Cookie;
     }
 
@@ -295,8 +290,7 @@ sub vcl_deliver {
     # Remove some headers: Apache version & OS
     unset resp.http.Server;
     unset resp.http.X-Domain;
-    unset resp.http.X-Drupal-Cache;
-    unset resp.http.X-Drupal-Cache-Tags;
+    unset resp.http.X-Cache-Tags;
     unset resp.http.X-Varnish;
     unset resp.http.Via;
     unset resp.http.Link;

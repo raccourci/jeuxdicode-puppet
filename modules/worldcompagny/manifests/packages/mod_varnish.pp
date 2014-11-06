@@ -1,4 +1,4 @@
-class jeuxdicode::packages::mod_varnish {
+class worldcompagny::packages::mod_varnish {
 
     # Enabled logs Varnish
     file {
@@ -6,7 +6,7 @@ class jeuxdicode::packages::mod_varnish {
             owner => 'root',
             group => 'root',
             mode  => '0644',
-            source => 'puppet:///modules/jeuxdicode/packages/varnish/varnishncsa',
+            source => 'puppet:///modules/worldcompagny/packages/varnish/varnishncsa',
             require => Class['varnish'],
             notify => Service['varnishncsa']
     }

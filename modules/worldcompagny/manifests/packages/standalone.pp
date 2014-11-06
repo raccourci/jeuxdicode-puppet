@@ -1,4 +1,4 @@
-class jeuxdicode::packages::standalone {
+class worldcompagny::packages::standalone {
 
     # Package indispensables
     ensure_packages([

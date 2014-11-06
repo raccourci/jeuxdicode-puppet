@@ -1,4 +1,4 @@
-class jeuxdicode::users::root {
+class worldcompagny::users::root {
 
     # Mise en place des répertoires 'www', '.ssh' et 'logs'
     file {
@@ -6,18 +6,18 @@ class jeuxdicode::users::root {
             owner => 'root',
             group => 'root',
             mode  => '0640',
-            source => 'puppet:///modules/jeuxdicode/users/bashrc_root';
+            source => 'puppet:///modules/worldcompagny/users/bashrc_root';
 
         '/root/.bash_aliases':
             owner => 'root',
             group => 'root',
             mode  => '0640',
-            source => 'puppet:///modules/jeuxdicode/users/bash_aliases';
+            source => 'puppet:///modules/worldcompagny/users/bash_aliases';
 
         '/root/.profile':
             owner => 'root',
             group => 'root',
             mode  => '0640',
-            source => 'puppet:///modules/jeuxdicode/users/profile';
+            source => 'puppet:///modules/worldcompagny/users/profile';
     }
 }

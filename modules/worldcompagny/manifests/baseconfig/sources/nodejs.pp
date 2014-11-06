@@ -1,4 +1,4 @@
-class jeuxdicode::baseconfig::sources::nodejs inherits jeuxdicode::baseconfig::sources {
+class worldcompagny::baseconfig::sources::nodejs inherits worldcompagny::baseconfig::sources {
 
     apt::source { 'nodejs':
         location => 'https://deb.nodesource.com/node',
